@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import Pet from '../dao/Pets.dao.js';
 import Users from '../dao/Users.dao.js';
 

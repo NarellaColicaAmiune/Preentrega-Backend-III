@@ -8,6 +8,7 @@ import petsRouter from './routes/pets.router.js';
 import adoptionsRouter from './routes/adoption.router.js';
 import sessionsRouter from './routes/sessions.router.js';
 import mocksRouter from './routes/mocks.router.js';
+import { setupSwagger } from './docs/swagger.js';
 
 const app = express();
 const PORT = process.env.PORT||8080;
@@ -21,9 +22,10 @@ app.use('/api/pets',petsRouter);
 app.use('/api/adoptions',adoptionsRouter);
 app.use('/api/sessions',sessionsRouter);
 app.use('/api/mocks', mocksRouter);
+setupSwagger(app);
 app.use((err, req, res, next) => {
     console.log(err);
       return res.status(err.statusCode).json({ name: err.name, status: "error", error: err.errorMessage || err.message });
     });
 
-app.listen(PORT,()=>console.log(`Listening on ${PORT}`))
+export default app;
