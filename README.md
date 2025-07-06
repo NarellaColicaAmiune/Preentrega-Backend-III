@@ -51,6 +51,23 @@ Acceder vía: http://localhost:8080/api-docs/
 
 ## 🐳 Docker
 
+#### 🔨 Build de la imagen
+```bash
+docker build -t narecolica/my-app:latest .
+```
+
+#### 📥 Pull desde DockerHub
+```bash
+docker pull narecolica/my-app:latest
+```
+
+#### 🚀 Ejecución del contenedor
+```bash
+docker run -p 8080:8080 \
+-e MONGO_URL=mongodb://host.docker.internal:27017 \
+narecolica/my-app:latest
+```
+
 ### 🔗 Imagen pública:
 
 https://hub.docker.com/repository/docker/narecolica/my-app/general
