@@ -66,7 +66,7 @@ describe("Ruta creación de adopción", () => {
             pets: []
         });
         const responsePet = await pet.save({
-            name: "Buddy",
+            name: "Rocky",
             specie: "Dog",
             adopted: false,
             owner: responseId._id,
